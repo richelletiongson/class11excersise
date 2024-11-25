@@ -38,7 +38,12 @@ const readline = require("readline").createInterface({
   
   let users = [];
   let banned = [];
-  
+  let settings = {
+    addRegistry:true,
+    checkRegistry:true,
+    banPerson:true,
+    checkBans:true
+  }
   
   function AddUserToRegistry() {
     
