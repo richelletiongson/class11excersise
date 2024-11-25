@@ -89,7 +89,14 @@ const readline = require("readline").createInterface({
   }
   
   function CheckBanned(){
-    
+    if (settings.checkBans === true){
+      for(let i=0; i<banned.length; i++){
+        console.log(`Banned User: ${banned[i]}`)
+      }
+      StartApp();
+     } else {
+      console.log("PERMISSION DENIED! GO HOME")
+     }
     //loop through all the banned users and log them
   }
   
