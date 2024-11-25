@@ -46,7 +46,21 @@ const readline = require("readline").createInterface({
   }
   
   function AddUserToRegistry() {
-    
+    readline.question("What is the user name?", _users=>{
+      for (let i=0; i<banned.length; i++){
+        if (banned[i] === _users) {
+          settings.addRegistry = false;
+        }
+      } // this is to check is new user is already on banned list
+      if (settings.addRegistry === true){
+        users.push(_users);
+        StartApp();
+      } else if (settings.addRegistry === false) {
+        console.log('${_users} is banned and can not be registered.')
+      } else {
+        console.log("PERMISSION DENIED! GO HOME")
+      }
+    })
     //user readline to prompt for the name of the user to be added
   }
   
