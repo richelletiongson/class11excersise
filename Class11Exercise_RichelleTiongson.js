@@ -77,7 +77,14 @@ const readline = require("readline").createInterface({
   }
   
   function BanUser(){
-  
+    if (settings.banPerson === true){
+      readline.question("Who is the user you want to ban?", _banned=>{
+        banned.push(_banned);
+        StartApp();
+      })
+      } else {
+        console.log("PERMISSION DENIED! GO HOME")
+      }
     //use readline to prompt for the name of the user to be banned
   }
   
