@@ -65,7 +65,14 @@ const readline = require("readline").createInterface({
   }
   
   function CheckRegistry() {
-    
+    if (settings.checkRegistry === true){
+      for(let i=0; i<users.length; i++){
+        console.log(`User: ${users[i]}`)
+      }
+      StartApp();
+    } else {
+      console.log("PERMISSION DENIED! GO HOME")
+    }
     //loop through all the users and log them
   }
   
